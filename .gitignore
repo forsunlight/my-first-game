@@ -39,3 +39,6 @@ next-env.d.ts
 
 # TypeScript incremental cache
 *.tsbuildinfo
+
+# Standalone GitHub Pages output
+/dist-github/

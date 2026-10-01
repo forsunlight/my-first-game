@@ -6,12 +6,25 @@
 
 ```sh
 npm install
-npm run dev -- --host 0.0.0.0
+npm run dev -- --hostname 0.0.0.0
 ```
 
 电脑打开终端显示的本地地址（通常是 http://localhost:3000）。在 iPad 上使用 Safari 打开本项目的私有发布链接，并使用拥有该网站的账号登录。
 
 同一 Wi-Fi 下也可在 iPad 打开 `http://电脑的局域网IP:3000`；电脑需要保持运行，并允许本地服务通过系统防火墙。iPad 上的 `localhost` 指 iPad 自己，不能用于连接电脑。
+
+## GitHub Pages 版本
+
+游戏另有纯静态构建入口，直接复用相同的场景和玩法，不需要 Sites 登录或后端。
+
+```sh
+npm run build:pages
+npm run preview:pages
+```
+
+生成目录是 `dist-github/`，所有资源使用相对地址，可部署到 GitHub Pages 的仓库子路径。`.github/workflows/pages.yml` 会在推送 `main` 时先运行测试、类型检查和游戏代码检查，再构建并发布。首次发布需在目标仓库的 Pages 设置中选择 GitHub Actions。
+
+GitHub Pages 部署完成后，请在 iPad Safari 打开新的 `github.io` 游戏地址，再通过分享菜单添加到主屏幕。GitHub Pages 版不需要 ChatGPT 登录，当前仍需联网加载。
 
 ## 操作
 
